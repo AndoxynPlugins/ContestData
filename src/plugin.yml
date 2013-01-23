@@ -24,12 +24,20 @@ permissions:
   contestdata.viewinfo:
     description: Allows you to view Contest Data
     default: true
+    children:
+      contestdata.help: true
   contestdata.enter:
     description: Allows you to enter contests.
     default: true
+    children:
+      contestdata.help: true
   contestdata.create:
     description: Allows you to create new versions of contests.
     default: false
+    children:
+      contestdata.help: true
   contestdata.admin:
     description: ContestData Admin
     default: false
+    children:
+      contestdata.help: true
