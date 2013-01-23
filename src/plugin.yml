@@ -1,0 +1,35 @@
+name: ContestData
+main: net.daboross.bukkitdev.contestdata.ContestData
+version: 0.0
+description: This plugin is an extension of PlayerData that records BanData
+author: Dabo Ross
+depend: [PlayerData]
+commands:
+   cd:
+     description: This is the base command for Contest Data.
+     usage: /<command> [subcommand] (You can use /<command> ? for list of sub commands)
+     aliases: [contestdata, cdata, contestd]
+permissions:
+  contestdata.*:
+    description: Gives access to all BanData commands
+    children:
+      contestdata.help: true
+      contestdata.viewinfo: true
+      contestdata.enter: true
+      contestdata.admin: true
+    default: false
+  contestdata.help:
+    description: Allows you to use /cd ?
+    default: true
+  contestdata.viewinfo:
+    description: Allows you to view Contest Data
+    default: true
+  contestdata.enter:
+    description: Allows you to enter contests.
+    default: true
+  contestdata.create:
+    description: Allows you to create new versions of contests.
+    default: false
+  contestdata.admin:
+    description: ContestData Admin
+    default: false
