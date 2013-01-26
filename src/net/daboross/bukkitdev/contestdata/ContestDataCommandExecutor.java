@@ -18,11 +18,11 @@ import org.bukkit.entity.Player;
  */
 public class ContestDataCommandExecutor implements CommandExecutor {
 
-    private final Map<String, String> aliasMap = new HashMap<>();
-    private final Map<String, Boolean> isConsoleMap = new HashMap<>();
-    private final Map<String, String> helpList = new HashMap<>();
-    private final Map<String, String[]> helpAliasMap = new HashMap<>();
-    private final Map<String, String> permMap = new HashMap<>();
+    private final Map<String, String> aliasMap = new HashMap<String, String>();
+    private final Map<String, Boolean> isConsoleMap = new HashMap<String, Boolean>();
+    private final Map<String, String> helpList = new HashMap<String, String>();
+    private final Map<String, String[]> helpAliasMap = new HashMap<String, String[]>();
+    private final Map<String, String> permMap = new HashMap<String, String>();
     private ContestData pluginMain;
     private PlayerData pDataM;
     private PlayerDataHandler pDataH;
