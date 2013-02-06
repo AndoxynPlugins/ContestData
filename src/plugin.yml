@@ -1,8 +1,9 @@
 name: ContestData
 main: net.daboross.bukkitdev.contestdata.ContestData
 version: 0.1
-description: This plugin is an extension of PlayerData that records BanData
 author: Dabo Ross
+prefix: CD
+description: This plugin is an extension of PlayerData that records Contest Data
 depend: [PlayerData]
 commands:
    cd:
