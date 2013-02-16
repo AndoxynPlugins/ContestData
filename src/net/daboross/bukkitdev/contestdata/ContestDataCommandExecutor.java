@@ -29,22 +29,19 @@ public class ContestDataCommandExecutor extends CommandExecutorBase {
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("dcommand")) {
-            String commandName = isCommandValid(sender, cmd, label, args);
-            if (commandName == null) {
-                return true;
-            }
-            if (commandName.equalsIgnoreCase("name")) {
-                runSubCommand(sender, cmd, getSubArray(args));
-            }
-            return true;
+    public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel, String[] subCommandArgs) {
+        if (subCommand.equalsIgnoreCase("entercontset")) {
+            runSubCommand(sender, mainCommand, subCommandArgs);
         }
-        return false;
     }
 
     private void runSubCommand(CommandSender sender, Command cmd, String[] args) {
         sender.sendMessage(ColorList.MAIN + "You Just Ran Sub Command");
         pluginMain.getLogger().log(Level.INFO, "{0} just ran Sub Command", sender.getName());
+    }
+
+    @Override
+    public String getCommandName() {
+        return "cd";
     }
 }
