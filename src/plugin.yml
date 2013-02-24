@@ -1,6 +1,6 @@
 name: ContestData
 main: net.daboross.bukkitdev.contestdata.ContestData
-version: 0.1
+version: 1.0
 author: Dabo Ross
 prefix: CD
 description: This plugin is an extension of PlayerData that records Contest Data
@@ -12,7 +12,7 @@ commands:
      aliases: [contestdata, cdata, contestd]
 permissions:
   contestdata.*:
-    description: Gives access to all BanData commands
+    description: Gives access to all ContestData commands
     children:
       contestdata.help: true
       contestdata.viewinfo: true

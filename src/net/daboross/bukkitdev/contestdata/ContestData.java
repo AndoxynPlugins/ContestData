@@ -34,11 +34,11 @@ public class ContestData extends JavaPlugin {
             return;
         }
         commandExecutor = new ContestDataCommandExecutor(this);
-        PluginCommand dCommand = getCommand("dcommand");
+        PluginCommand dCommand = getCommand("cd");
         if (dCommand != null) {
             dCommand.setExecutor(commandExecutor);
         } else {
-            getLogger().log(Level.SEVERE, "dCommand Not Found!");
+            getLogger().log(Level.SEVERE, "ContestData Command Not Found!");
         }
         currentInstance = this;
     }
