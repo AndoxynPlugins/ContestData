@@ -30,8 +30,7 @@ public class ContestDataCommandExecutor extends CommandExecutorBase {
 
     @Override
     public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel, String[] subCommandArgs) {
-        if (subCommand.equalsIgnoreCase("entercontset")) {
-            runSubCommand(sender, mainCommand, subCommandArgs);
+        if (subCommand.equalsIgnoreCase("entercontest")) {
         }
     }
 
