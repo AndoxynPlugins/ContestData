@@ -30,7 +30,8 @@ public class CData {
     protected ContestEntry[] getEntries() {
         return contestEntries;
     }
-    protected PData getOwner(){
+
+    protected PData getOwner() {
         return owner;
     }
 }
