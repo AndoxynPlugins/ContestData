@@ -1,6 +1,3 @@
-/*
- * Originally Created by Dabo Ross.
- */
 package net.daboross.bukkitdev.contestdata;
 
 import net.daboross.bukkitdev.playerdata.PData;
