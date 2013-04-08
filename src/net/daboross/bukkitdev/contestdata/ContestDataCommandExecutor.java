@@ -1,7 +1,6 @@
 package net.daboross.bukkitdev.contestdata;
 
-import java.util.logging.Level;
-import net.daboross.bukkitdev.playerdata.ColorList;
+import net.daboross.bukkitdev.commandexecutorbase.CommandExecutorBase;
 import net.daboross.bukkitdev.playerdata.PlayerData;
 import net.daboross.bukkitdev.playerdata.PlayerDataHandler;
 import org.bukkit.command.Command;
@@ -32,11 +31,6 @@ public class ContestDataCommandExecutor extends CommandExecutorBase {
     public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel, String[] subCommandArgs) {
         if (subCommand.equalsIgnoreCase("entercontest")) {
         }
-    }
-
-    private void runSubCommand(CommandSender sender, Command cmd, String[] args) {
-        sender.sendMessage(ColorList.MAIN + "You Just Ran Sub Command");
-        pluginMain.getLogger().log(Level.INFO, "{0} just ran Sub Command", sender.getName());
     }
 
     @Override

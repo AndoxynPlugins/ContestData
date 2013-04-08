@@ -15,8 +15,8 @@ public class DataParser {
     public String[] parseToList(CData cd) {
         List<String> returnList = new ArrayList<String>();
         for (ContestEntry ce : cd.getEntries()) {
-            returnList.add("");
+            returnList.add(ce.toString());
         }
-        return returnList.toArray(new String[0]);
+        return returnList.toArray(new String[returnList.size()]);
     }
 }

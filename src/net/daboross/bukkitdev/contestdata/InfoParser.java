@@ -10,13 +10,16 @@ import net.daboross.bukkitdev.playerdata.DataDisplayParser;
 public class InfoParser implements DataDisplayParser {
 
     private static InfoParser instance;
+    private static final Object INSTANCE_LOCK = new Object();
 
     private InfoParser() {
     }
 
     public static InfoParser getInstance() {
-        if (instance == null) {
-            instance = new InfoParser();
+        synchronized (INSTANCE_LOCK) {
+            if (instance == null) {
+                instance = new InfoParser();
+            }
         }
         return instance;
     }
