@@ -1,5 +1,6 @@
 package net.daboross.bukkitdev.contestdata;
 
+import net.daboross.bukkitdev.commandexecutorbase.ColorList;
 import net.daboross.bukkitdev.commandexecutorbase.CommandExecutorBase;
 import net.daboross.bukkitdev.playerdata.PlayerData;
 import net.daboross.bukkitdev.playerdata.PlayerDataHandler;
@@ -23,18 +24,21 @@ public class ContestDataCommandExecutor extends CommandExecutorBase {
         pluginMain = mainPlugin;
         pDataM = mainPlugin.getPDataMain();
         pDataH = pDataM.getHandler();
-        initCommand("help", new String[]{"?"}, true, "contestdata.help", "This Command Views This Page");
-        initCommand("entercontest", new String[]{"ec"}, true, "contestdata.enter", "This Command Enters you Into a Contest");
-    }
-
-    @Override
-    public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel, String[] subCommandArgs) {
-        if (subCommand.equalsIgnoreCase("entercontest")) {
-        }
+        initCommand("entercontest", new String[]{"ec"}, true, "contestdata.enter", "This Command Enters you Into a Contest", new CommandReactor() {
+            public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel,
+                    String[] subCommandArgs, CommandExecutorBridge executorBridge) {
+                sender.sendMessage(ColorList.MAIN + "this isn't a command :P");
+            }
+        });
     }
 
     @Override
     public String getCommandName() {
         return "cd";
+    }
+
+    @Override
+    protected String getMainCmdPermission() {
+        return "contestdata.help";
     }
 }
