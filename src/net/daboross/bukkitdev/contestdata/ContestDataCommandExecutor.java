@@ -2,20 +2,24 @@ package net.daboross.bukkitdev.contestdata;
 
 import net.daboross.bukkitdev.commandexecutorbase.ColorList;
 import net.daboross.bukkitdev.commandexecutorbase.CommandExecutorBase;
+import net.daboross.bukkitdev.commandexecutorbase.SubCommand;
+import net.daboross.bukkitdev.commandexecutorbase.SubCommandHandler;
 import net.daboross.bukkitdev.playerdata.PlayerData;
 import net.daboross.bukkitdev.playerdata.PlayerDataHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.PluginCommand;
 
 /**
  *
  * @author daboross
  */
-public class ContestDataCommandExecutor extends CommandExecutorBase {
+public class ContestDataCommandExecutor {
 
-    private ContestData pluginMain;
-    private PlayerData pDataM;
-    private PlayerDataHandler pDataH;
+    private final ContestData pluginMain;
+    private final PlayerData pDataM;
+    private final PlayerDataHandler pDataH;
+    private final CommandExecutorBase commandExecutorBase;
 
     /**
      *
@@ -24,21 +28,14 @@ public class ContestDataCommandExecutor extends CommandExecutorBase {
         pluginMain = mainPlugin;
         pDataM = mainPlugin.getPDataMain();
         pDataH = pDataM.getHandler();
-        initCommand("entercontest", new String[]{"ec"}, true, "contestdata.enter", "This Command Enters you Into a Contest", new CommandReactor() {
-            public void runCommand(CommandSender sender, Command mainCommand, String mainCommandLabel, String subCommand, String subCommandLabel,
-                    String[] subCommandArgs, CommandExecutorBridge executorBridge) {
-                sender.sendMessage(ColorList.MAIN + "this isn't a command :P");
-            }
-        });
+        commandExecutorBase = new CommandExecutorBase("contestdata.help");
+        commandExecutorBase.addSubCommand(new SubCommand("entercontest", new String[]{"ec"}, true, "contestdata.enter", "This Command Enters you Into a Contest", null));
     }
 
-    @Override
-    public String getCommandName() {
-        return "cd";
-    }
-
-    @Override
-    protected String getMainCmdPermission() {
-        return "contestdata.help";
+    protected void registerCommand() {
+        PluginCommand contestdata = pluginMain.getCommand("contestdata:contestdata");
+        if (contestdata != null) {
+            contestdata.setExecutor(commandExecutorBase);
+        }
     }
 }

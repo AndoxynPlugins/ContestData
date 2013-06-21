@@ -3,7 +3,6 @@ package net.daboross.bukkitdev.contestdata;
 import java.util.logging.Level;
 import net.daboross.bukkitdev.playerdata.PlayerData;
 import org.bukkit.Bukkit;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -34,12 +33,7 @@ public class ContestData extends JavaPlugin {
             return;
         }
         commandExecutor = new ContestDataCommandExecutor(this);
-        PluginCommand dCommand = getCommand("cd");
-        if (dCommand != null) {
-            dCommand.setExecutor(commandExecutor);
-        } else {
-            getLogger().log(Level.SEVERE, "ContestData Command Not Found!");
-        }
+        commandExecutor.registerCommand();
         currentInstance = this;
     }
 

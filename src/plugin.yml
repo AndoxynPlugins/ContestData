@@ -6,10 +6,10 @@ prefix: CD
 description: This plugin is an extension of PlayerData that records Contest Data
 depend: [PlayerData]
 commands:
-   cd:
+   contestdata:contestdata:
      description: This is the base command for Contest Data.
      usage: /<command> [subcommand] (You can use /<command> ? for list of sub commands)
-     aliases: [contestdata, cdata, contestd]
+     aliases: [contestdata, cdata, contestd, cd]
 permissions:
   contestdata.*:
     description: Gives access to all ContestData commands
