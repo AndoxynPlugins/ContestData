@@ -1,9 +1,9 @@
 package net.daboross.bukkitdev.contestdata;
 
-import net.daboross.bukkitdev.commandexecutorbase.ColorList;
-import net.daboross.bukkitdev.commandexecutorbase.CommandExecutorBase;
-import net.daboross.bukkitdev.commandexecutorbase.SubCommand;
-import net.daboross.bukkitdev.commandexecutorbase.SubCommandHandler;
+import net.daboross.bukkitdev.playerdata.libraries.commandexecutorbase.ColorList;
+import net.daboross.bukkitdev.playerdata.libraries.commandexecutorbase.CommandExecutorBase;
+import net.daboross.bukkitdev.playerdata.libraries.commandexecutorbase.SubCommand;
+import net.daboross.bukkitdev.playerdata.libraries.commandexecutorbase.SubCommandHandler;
 import net.daboross.bukkitdev.playerdata.PlayerData;
 import net.daboross.bukkitdev.playerdata.PlayerDataHandler;
 import org.bukkit.command.Command;
