@@ -1,6 +1,6 @@
 package net.daboross.bukkitdev.contestdata;
 
-import net.daboross.bukkitdev.playerdata.PData;
+import net.daboross.bukkitdev.playerdata.PlayerDataImpl;
 
 /**
  *
@@ -9,9 +9,9 @@ import net.daboross.bukkitdev.playerdata.PData;
 public class CData {
 
     private ContestEntry[] contestEntries;
-    private PData owner;
+    private PlayerDataImpl owner;
 
-    protected CData(ContestEntry[] entries, PData owner) {
+    protected CData(ContestEntry[] entries, PlayerDataImpl owner) {
         if (owner == null || entries == null) {
             throw new IllegalArgumentException("Null Argument(s) in CData Constructor");
         }
@@ -31,7 +31,7 @@ public class CData {
         return contestEntries;
     }
 
-    protected PData getOwner() {
+    protected PlayerDataImpl getOwner() {
         return owner;
     }
 }

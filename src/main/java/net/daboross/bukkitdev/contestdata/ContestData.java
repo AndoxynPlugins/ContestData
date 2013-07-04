@@ -1,7 +1,7 @@
 package net.daboross.bukkitdev.contestdata;
 
 import java.util.logging.Level;
-import net.daboross.bukkitdev.playerdata.PlayerData;
+import net.daboross.bukkitdev.playerdata.PlayerDataBukkit;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ContestData extends JavaPlugin {
 
     private static ContestData currentInstance;
-    private PlayerData pDataM;
+    private PlayerDataBukkit pDataM;
     private ContestDataCommandExecutor commandExecutor;
 
     @Override
@@ -22,8 +22,8 @@ public class ContestData extends JavaPlugin {
         if (playerDataPlugin == null) {
             getLogger().log(Level.SEVERE, "PlayerData Not Found!");
         } else {
-            if (playerDataPlugin instanceof PlayerData) {
-                pDataM = (PlayerData) playerDataPlugin;
+            if (playerDataPlugin instanceof PlayerDataBukkit) {
+                pDataM = (PlayerDataBukkit) playerDataPlugin;
             } else {
                 getLogger().log(Level.SEVERE, "PlayerData Not Instance Of Player Data!");
             }
@@ -46,7 +46,7 @@ public class ContestData extends JavaPlugin {
         return currentInstance;
     }
 
-    protected PlayerData getPDataMain() {
+    protected PlayerDataBukkit getPDataMain() {
         return pDataM;
     }
 }
