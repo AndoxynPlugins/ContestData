@@ -1,6 +1,6 @@
-name: ContestData
+name: ${project.name}
 main: net.daboross.bukkitdev.contestdata.ContestData
-version: 1.1
+version: ${project.version}
 author: Dabo Ross
 prefix: CD
 description: This plugin is an extension of PlayerData that records Contest Data
