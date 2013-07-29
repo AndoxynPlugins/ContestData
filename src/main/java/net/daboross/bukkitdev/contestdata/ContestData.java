@@ -17,7 +17,7 @@
 package net.daboross.bukkitdev.contestdata;
 
 import java.util.logging.Level;
-import net.daboross.bukkitdev.playerdata.PlayerDataBukkit;
+import net.daboross.bukkitdev.playerdata.api.PlayerDataPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,22 +29,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ContestData extends JavaPlugin {
 
     private static ContestData currentInstance;
-    private PlayerDataBukkit pDataM;
+    private PlayerDataPlugin playerDataMain;
     private ContestDataCommandExecutor commandExecutor;
 
     @Override
     public void onEnable() {
         Plugin playerDataPlugin = Bukkit.getPluginManager().getPlugin("PlayerData");
         if (playerDataPlugin == null) {
-            getLogger().log(Level.SEVERE, "PlayerData Not Found!");
+            getLogger().log(Level.SEVERE, "PlayerData not found!");
         } else {
-            if (playerDataPlugin instanceof PlayerDataBukkit) {
-                pDataM = (PlayerDataBukkit) playerDataPlugin;
+            if (playerDataPlugin instanceof PlayerDataPlugin) {
+                playerDataMain = (PlayerDataPlugin) playerDataPlugin;
             } else {
-                getLogger().log(Level.SEVERE, "PlayerData Not Instance Of Player Data!");
+                getLogger().log(Level.SEVERE, "PlayerData plugin not instanceof PlayerDataPlugin!");
             }
         }
-        if (pDataM == null) {
+        if (playerDataMain == null) {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
@@ -62,7 +62,7 @@ public class ContestData extends JavaPlugin {
         return currentInstance;
     }
 
-    protected PlayerDataBukkit getPDataMain() {
-        return pDataM;
+    protected PlayerDataPlugin getPlayerDataPlugin() {
+        return playerDataMain;
     }
 }

@@ -10,6 +10,10 @@
             <id>bukkit-repo</id>
             <url>http://repo.bukkit.org/content/groups/public</url>
         </repository>
+        <repository>
+            <id>playerdata-repo</id>
+            <url>https://repository-daboross.forge.cloudbees.com/snapshot/</url>
+        </repository>
     </repositories>
     <build>
         <finalName>${project.name}</finalName>
