@@ -16,11 +16,13 @@
  */
 package net.daboross.bukkitdev.contestdata;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import net.daboross.bukkitdev.playerdata.api.PlayerDataPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.MetricsLite;
 
 /**
  *
@@ -28,7 +30,6 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class ContestData extends JavaPlugin {
 
-    private static ContestData currentInstance;
     private PlayerDataPlugin playerDataMain;
     private ContestDataCommandExecutor commandExecutor;
 
@@ -50,16 +51,19 @@ public class ContestData extends JavaPlugin {
         }
         commandExecutor = new ContestDataCommandExecutor(this);
         commandExecutor.registerCommand();
-        currentInstance = this;
+        MetricsLite metrics = null;
+        try {
+            metrics = new MetricsLite(this);
+        } catch (IOException ex) {
+            getLogger().log(Level.WARNING, "Unable to create Metrics", ex);
+        }
+        if (metrics != null) {
+            metrics.start();
+        }
     }
 
     @Override
     public void onDisable() {
-        currentInstance = null;
-    }
-
-    protected static ContestData getCurrentInstance() {
-        return currentInstance;
     }
 
     protected PlayerDataPlugin getPlayerDataPlugin() {
