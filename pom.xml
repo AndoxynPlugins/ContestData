@@ -1,10 +1,68 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>net.daboross.bukkitdev</groupId>
-    <artifactId>ContestData</artifactId>
+    <artifactId>contest-data</artifactId>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <version>1.1.0</version>
+
     <name>ContestData</name>
+    <description>Contest data</description>
+    <url>https://github.com/daboross/ContestData</url>
+    <inceptionYear>2013</inceptionYear>
+    <licenses>
+        <license>
+            <name>GNU General Public License (GPL) Version 3</name>
+            <url>http://www.gnu.org/licenses/gpl.html</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>daboross</id>
+            <name>Dabo Ross</name>
+            <email>daboross@daboross.net</email>
+            <url>http://www.daboross.net</url>
+            <timezone>-8</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/daboross/ContestData.git</url>
+        <connection>scm:git:https://github.com/daboross/ContestData.git</connection>
+        <developerConnection>scm:git:git@github.com:daboross/ContestData.git</developerConnection>
+    </scm>
+    <properties>
+        <netbeans.hint.license>gpl30</netbeans.hint.license>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.6.2-R1.0</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mcstats.bukkit</groupId>
+            <artifactId>metrics-lite</artifactId>
+            <version>R7</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.daboross.bukkitdev</groupId>
+            <artifactId>PlayerDataAPI</artifactId>
+            <version>4.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.daboross.bukkitdev</groupId>
+            <artifactId>CommandExecutorBase</artifactId>
+            <version>1.3.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
     <repositories>
         <repository>
             <id>bukkit-repo</id>
@@ -14,11 +72,8 @@
             <id>mcstats-repo</id>
             <url>http://repo.mcstats.org/content/repositories/public</url>
         </repository>
-        <repository>
-            <id>temp-daboross-repo</id>
-            <url>https://repository-daboross.forge.cloudbees.com/snapshot/</url>
-        </repository>
     </repositories>
+
     <build>
         <finalName>${project.name}</finalName>
         <resources>
@@ -73,34 +128,4 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.6.2-R0.1-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mcstats.bukkit</groupId>
-            <artifactId>metrics-lite</artifactId>
-            <version>R7</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.daboross.bukkitdev</groupId>
-            <artifactId>PlayerDataAPI</artifactId>
-            <version>4.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.daboross.bukkitdev</groupId>
-            <artifactId>CommandExecutorBase</artifactId>
-            <version>1.3.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 </project>
